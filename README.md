@@ -8,8 +8,9 @@ Currently using virtualbox VM with ububtu 16.04 and 3GB memory allotted...it's w
 <h3><b>Accuracy</b></h3>
 
 <h4><b>Vanilla NN:</b></h4>
-3 hidden each has 500 neurons and epoch of 10: 0.95190001
-3 hidden each has 500 neurons and epoch of 20: 0.96219999
-
+<ul>
+<li>3 hidden each has 500 neurons and epoch of 10: 0.95190001</li>
+<li>3 hidden each has 500 neurons and epoch of 20: 0.96219999</li>
+</ul>
 <h4><b>RNN:</b></h4>
 RNN size:128 , chunk/sequence/timestep size:28 (which is image width), epoch:10 : 0.98369998
