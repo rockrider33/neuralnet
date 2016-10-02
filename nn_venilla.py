@@ -1,14 +1,20 @@
 #this is a mnist precleaned dataset and this model describes a venilla NN.
-#Accuracy - 0.95190001
+
+#Accuracy 0.9479 : vanilla.
+#Accuracy 0.9515 : with 0.001 learning rate.
+#Accuracy 0.95950001: with h1,h2=700 neurons.
+#Accuracy 0.96820003: with h1,h2,h3=2000 neurons.
+#todo: try L2-regularization.
 
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 import tensorflow as tf
-mnist = input_data.read_data_sets("/tmp/data/", one_hot = True)
+mnist = input_data.read_data_sets("/home/prab/tensor/mnist/data/", one_hot = True)
 
-n_nodes_hl1 = 500
-n_nodes_hl2 = 500
-n_nodes_hl3 = 500
+n_nodes_hl1 = 2000
+n_nodes_hl2 = 2000
+n_nodes_hl3 = 2000
+
 n_classes = 10
 batch_size = 100
 
@@ -45,9 +51,9 @@ def neural_network_model(data):
 def train_neural_network(x):
     prediction = neural_network_model(x)
     cost = tf.reduce_mean( tf.nn.softmax_cross_entropy_with_logits(prediction,y) )
-    optimizer = tf.train.AdamOptimizer().minimize(cost)
+    optimizer = tf.train.AdamOptimizer(0.001).minimize(cost)
     
-    hm_epochs = 10 #Increase epoch to get better accuracy.
+    hm_epochs = 10
     with tf.Session() as sess:
         sess.run(tf.initialize_all_variables())
 
