@@ -1,5 +1,5 @@
 #this is a mnist precleaned dataset and this model describes a venilla NN.
-
+#Accuracy - 0.95190001
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 import tensorflow as tf
@@ -8,7 +8,6 @@ mnist = input_data.read_data_sets("/tmp/data/", one_hot = True)
 n_nodes_hl1 = 500
 n_nodes_hl2 = 500
 n_nodes_hl3 = 500
-tf.
 n_classes = 10
 batch_size = 100
 
